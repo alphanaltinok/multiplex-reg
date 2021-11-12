@@ -5,8 +5,8 @@ FROM continuumio/anaconda3
 WORKDIR /usr/src/app
 
 # Create the environment:
-COPY environment.yml .
-RUN conda env create -f environment.yml
+COPY unmc.yml .
+RUN conda env create -f unmc.yml
 
 # Make RUN commands use the new environment:
 SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
@@ -16,5 +16,5 @@ COPY . .
 
 # run the command
 # CMD ["python", "./reg_multiplex.py"]
-# ENTRYPOINT ["conda", "run", "-n", "reg", "python", "/usr/src/app/reg_multiplex.py", "/usr/src/data/input/", "/usr/src/data/output/"]
-ENTRYPOINT ["conda", "run", "-n", "reg", "python", "/usr/src/app/reg_multiplex.py"]
+# ENTRYPOINT ["conda", "run", "-n", "unmc", "python", "/usr/src/app/reg_multiplex.py", "/usr/src/data/input", "/usr/src/data/output"]
+ENTRYPOINT ["conda", "run", "-n", "unmc", "python", "/usr/src/app/register_multiplex_wsi.py",  "/usr/src/app/input", "/usr/src/app/output"]

@@ -1,0 +1,13 @@
+name: unmc
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.5
+  - pillow=7.2.0
+  - scikit-image=0.18.0
+  - tifffile=2020.9.22
+  - psutil=5.7.2
+  - glob2=0.7
+prefix: /Applications/anaconda3/envs/unmc
+
